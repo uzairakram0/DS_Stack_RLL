@@ -1,0 +1,27 @@
+UZAIR AKRAM
+ASSIGNMENT2
+reverseList.cpp
+    The reverseList algorithm itterates through the list and points the pointer of each node backwards.
+
+postfixEval.cpp
+    The postfixEval algorithm iterates through the input string and it gets and appends all operands to the int stack. When it encounters an operand it pops two operands from the stack one left handside and the other left handside of the operator. Beased on the operator the operation is completed with the two operands. This process repeats till the end of string is reached and the the final operations is completed. The last value in the stack is the result.
+
+balancing.cpp
+    The balancing algorithm iterates through the string being read in. When it encounters an opening brace the brace is appended to the char stack. When the string encounters a closing brace it retrieves the closing brace from stack. The opening and closing are tested if they pair based on the type of brace they are. If the pair matches, the bollean flag for balancing is set to true. The process repeats for all braces in the string.
+
+infix2postfix.cpp
+    The infix2postfix algorithm iterates through the string being read in and generates a new string for postfix. The it encounters the operands it appends them to the postfix string. When it encounters an operator the operator is added to the stack. If the stack is empty or if the operator has higher precidence than the previous operand it is staked on top. Otherwise the all elements below that have a higher or equal precidence are removed and appended to the postfix string and the operator is then stacked on top. The exception is the ^ operator it only prepends elements from stack that have a greater precedence than '^' whic are none. The '('parentheses is added to stack without checking for precidence. The ')' prepends all elemnts in stack till it reaches the opening parentheses '(', the prepended operators are added to postfix except '('. The process repeats till the end of the string is reached and then the stack is emptied and all remaining operators are added to the postfix string.
+
+BONUS   *THE PROGRAMS TAKES USER INPUT*
+postfix2infix.cpp
+    The postfix2infix algorithm iterates through the string being read in and append every operand to a string stack. When it encounters an operand it pops two operands from the stack one left handside and the other left handside of the operator. A new string is generated with the operator, the left operand and the right operand surrounded by parentheses and the generated string is apppended to the stack. This process repeats till the end of string is reached and the the final operations is completed. The last value in the stack is the result.
+
+multiDigitPostfix.cpp
+    The multiDigitPostfix.cpp algorithm works just like the postfixEval algorithm, but with multiple digits. The inputs must be seperated by [space]. It stores the operand into a remporary string, it checks if string at index i is digit, then it loops through until there it encounters a ' ' it then convers the the temp string to an int and then appends the integer to the stack. The rest works exactly like postfixEval.cpp.
+
+***ERRORS***
+infix2postfix.cpp
+    There is an error in the infix2postfix expression while loop, the loop is now rendered moot by a false statement. I replaced with an if statement but it however, only checks the previous operator for precedence but not all the preceding operators in the stack. The program evaluates all expression except for the second one correctly.
+
+postfix2infix.cpp
+    There is a linker error, i presume it is because the generic type T may not convert to string which is why the linker cannot link the functions in the stack class with a string type being passed to generic type T.
